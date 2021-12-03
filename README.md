@@ -8,4 +8,6 @@ cd todo
 chmod 777 main.sh
 
 sudo cp ./main.sh /usr/bin/todo
+
+todo
 ```

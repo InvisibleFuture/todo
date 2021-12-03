@@ -21,7 +21,7 @@ function ergodic() {
 		else
 			echo "$file"
 			# 获取文件后缀, 仅检查支持的后缀类型
-			search_todo $1"/"$file
+			# search_todo $1"/"$file
 		fi
 	done
 }
@@ -53,7 +53,7 @@ function show() {
 	echo `date '+%Y-%m-%d %H:%M:%S' -d @$LAST_MODIFY_TIMESTAMP`
 
 	# 扫描目录中支持的文件格式, 并排除 .gitignore 列举的目录
-	ergodic "."
+	# ergodic "."
 }
 
 #TODO: 加入目录命令, 使之检查目录最后一次更改
