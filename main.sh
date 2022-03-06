@@ -97,15 +97,11 @@ case $1 in
 		TODO version 0.1
 		**************************
 		1) Add
-		2) Delete
-		3) Copy
-		4) Exit
+    2) Set
+		3) Delete
+		4) Copy
+		5) Exit
 		**************************
 		EOF
 		;;
 esac
-
-
-
-
-
