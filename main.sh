@@ -1,11 +1,10 @@
 #!/bin/bash
 
 # 注册到全局命令(临时)
-# alias todo="sh ~/Desktop/automation/todo.sh"
+# alias todo="sh ~/todo/todo.sh"
 # 注册到全局命令(永久)
-# echo 'alias todo="sh ~/Desktop/automation/todo.sh"' >> ~/.bashrc
+# echo 'alias todo="sh ~/todo/todo.sh"' >> ~/.bashrc
 # source ~/.bashrc
-
 
 # 正则检查文件中所有 TODO 的行
 function search_todo() {
@@ -30,11 +29,7 @@ function show() {
 	# 展示读取的列表
 	# 取用状态/完成未完成
 	# 按照序列操作
-	if [ -d '~/.todo/' ]; then
-		echo "todo init"
-		mkdir ~/.todo/
-		touch "~/.todo/main.md"
-	fi
+	
 	loop=1
 	cat ~/.todo/main.md | while read line
 	do
@@ -65,15 +60,23 @@ function show() {
 #TODO: 可能存在编码格式问题
 #TODO: 每次显示都从缓存, 如果时解压来的文件夹, 其时间并不被公信, 其不应该存在TODO
 
+# 不存在则创建目录
+if [ ! -d "$HOME/.todo" ]; then
+	echo "todo init"
+	mkdir ~/.todo
+fi
+
+# 不存在则创建文件
+if [ ! -f "$HOME/.todo/main.md" ]; then
+	echo "todo init main.md"
+	touch "$HOME/.todo/main.md"
+fi
+
 case $1 in
 	"" | list)
 		show
 		;;
 	add | create)
-		if [ -d '~/.todo/' ]; then
-			echo "todo init"
-			mkdir ~/.todo/
-		fi
 		echo $2 >> ~/.todo/main.md
 		show
 		;;
@@ -96,11 +99,11 @@ case $1 in
 		**************************
 		TODO version 0.1
 		**************************
-		1) Add
-    2) Set
-		3) Delete
-		4) Copy
-		5) Exit
+		1) add: to | add | create (新建任务)
+		2) end: do | end | ok (归档任务)
+		3) del: rm | del | remove | delete (移除任务)
+		4) add: copy
+		5) add: exit
 		**************************
 		EOF
 		;;
