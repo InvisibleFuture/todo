@@ -9,8 +9,12 @@ git clone git@github.com:InvisibleFuture/todo.git
 cd todo
 chmod 777 main.sh
 
-# 将文件复制到命令目录, 以便直接使命令 todo
+# 可以将文件复制到命令目录, 以便直接使命令 todo
 sudo cp ./main.sh /usr/bin/todo
+
+# 或是创建软链接以便于修改功能
+sudo ln ./main.sh /usr/bin/todo
+
 
 # 此时已经可用 todo 命令, 默认会显示帮助提示
 todo
