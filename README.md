@@ -15,6 +15,9 @@ sudo cp ./main.sh /usr/bin/todo
 # 或是创建软链接以便于修改功能
 sudo ln ./main.sh /usr/bin/todo
 
+# 或是在没有 root 账户权限用于写入目录时, 也可以修改自己账户的 .bashrc 文件(注意当前文件路径)
+echo 'alias todo="sh ~/todo/todo.sh"' >> ~/.bashrc
+source ~/.bashrc
 
 # 此时已经可用 todo 命令, 默认会显示帮助提示
 todo
