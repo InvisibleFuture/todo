@@ -102,8 +102,10 @@ case $1 in
 		1) add: to | add | create (新建任务)
 		2) end: do | end | ok (归档任务)
 		3) del: rm | del | remove | delete (移除任务)
-		4) add: copy
-		5) add: exit
+		4) add: cp | copy
+		5) add: save | exit(导出数据为markdown或json)
+		6) add: http (创建web服务, 提供 restful api)
+		7) add: link 连接到服务器(通过网络自动同步)
 		**************************
 		EOF
 		;;
