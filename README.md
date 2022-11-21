@@ -1,5 +1,7 @@
 # todo
 bash todo !!
+使用命令快速创建 todo
+
 
 ![image](./image.png)
 
