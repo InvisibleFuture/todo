@@ -1,6 +1,8 @@
 # todo
 bash todo !!
 
+![image](./image.png)
+
 ```bash
 # 使用 git 将项目克隆到本地
 git clone git@github.com:InvisibleFuture/todo.git
